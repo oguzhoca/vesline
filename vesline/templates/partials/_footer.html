@@ -1,0 +1,80 @@
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'images/yenilogo1.png' %}" alt="" />
+            </a>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3></h3>
+                    </div>
+                    <p> 
+                        Vesline Kimya endüstriyel temizlik ve hijyen ürünleri üretimi, satış- pazarlama, hizmet ve servis altyapısı ile müşterisinin memnuniyetini kazanmış uluslararası firmaların en güçlü rakipleri arasında yer alan %100 Türk firmasıdır.</p>   
+                    <div class="footer-right">
+                        <ul class="footer-links-soi">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul><!-- end links -->
+                    </div>						
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+                        
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>İletişim Detayları</h3>
+                    </div>
+
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@vesline.com.tr">info@vesline.com.tr</a></li>
+                        <li><a href=""{% url 'index' %}"">www.vesline.com</a></li>
+                        <li>Karaoğlanoğlu Caddesi Etem Zengin İşmerkezi N.25 K.5 SEYRANTEPE/İSTANBUL</li>
+                       
+                          <li>Telefon  +90 212 2831017</li>
+                         
+                          <li>Faks  +90 212 2828038</li>
+                    </ul><!-- end links -->
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+            
+        </div><!-- end row -->
+    </div><!-- end container -->
+</footer><!-- end footer -->
+
+<div class="copyrights">
+    <div class="container">
+        <div class="footer-distributed">
+            <div class="footer-center">                   
+                <p class="footer-company-name">Tüm hakları saklıdır  Vesline Kimya San.ve Tic.Ltd.Şti. &copy; 2021  <a href="#">Vesline</a> </a></p>
+            </div>
+        </div>
+    </div><!-- end container -->
+</div><!-- end copyrights -->
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+<script src="{% static 'js/all.js' %}"></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/timeline.min.js' %}"></script>
+<script>
+    timeline(document.querySelectorAll('.timeline'), {
+        forceVerticalMode: 700,
+        mode: 'horizontal',
+        verticalStartPosition: 'left',
+        visibleItems: 4
+    });
+</script>
+<script>
+    $(window).on('load', function() {
+        $('#logreg').modal('show');
+    });
+</script>
+</body>
+</html>

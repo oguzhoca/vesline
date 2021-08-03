@@ -1,0 +1,52 @@
+{% load static %}
+
+<header class="top-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'images/yenilogo1.png' %}" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>z
+            </button>
+            <div class="collapse navbar-collapse" id="navbars-host">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Kurumsal </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="{% url 'about' %}">Hakkımızda </a>
+                            <a class="dropdown-item" href="{% url 'misyon' %}">Misyon & Vizyon </a>
+                            <a class="dropdown-item" href="{% url 'kvk' %}">Kişisel Verilerin Korunması </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Ürünler </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            {% for item in items %}
+                            <a class="dropdown-item" href="{% url 'items_by_category' item.category.slug %}">{{item.category}} </a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">İNSAN KAYNAKLARI </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="{% url 'isform' %}">İş Başvuru Formu </a>
+                            <a class="dropdown-item" href="{% url 'stajform' %}">Staj Başvuru</a>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item {% if 'contact' in request.path %} active {% endif %}"><a class="nav-link" href="{% url 'contact' %}">İletişim</a></li>
+                <!-- </ul>
+
+                    <li><a class="hover-btn-new log orange mr-2" href="{% url 'index' %}"><span><i class="fa fa-sign-in"></i></span></a></li>
+                    <li><a class="hover-btn-new log orange" href="{% url 'about' %}"><span><i class="fa fa-user-plus"></i></span></a></li>
+
+                
+                </ul> -->
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- End header -->
