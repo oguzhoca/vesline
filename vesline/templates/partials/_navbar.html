@@ -9,7 +9,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>z
+                <span class="icon-bar"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbars-host">
                 <ul class="navbar-nav ml-auto">
@@ -22,8 +22,13 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Ürünler </a>
+                        <a class="nav-link dropdown-toggle" href="{% url 'items' %}" id="dropdown-a" data-toggle="dropdown">Ürünler </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/items">Tüm Ürünler </a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/items/categories/oxy">OXY </a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/items/categories/line-clean">LİNE CLEAN </a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/items/categories/proson">PROSON </a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/items/categories/pro-hijyen">PRO HİJYEN </a>
                             {% for item in items %}
                             <a class="dropdown-item" href="{% url 'items_by_category' item.category.slug %}">{{item.category}} </a>
                             {% endfor %}

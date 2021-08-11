@@ -8,17 +8,76 @@
 			<h1>Ürünler<span class="m_1"></span></h1>
 		</div>
 	</div>
+	<div class="parallax section dbcolor">
+        <div class="container">
+            <div class="row logos">
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="http://127.0.0.1:8000/items/categories/oxy"><img src="{% static 'images/OXY.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="http://127.0.0.1:8000/items/categories/line-clean"><img src="{% static 'images/LİNE.jpg' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="http://127.0.0.1:8000/items/categories/pro-hijyen"><img src="{% static 'images/PROHİJYEN.jpg' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="http://127.0.0.1:8000/items/categories/proson"><img src="{% static 'images/PROSON.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+				<div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="http://127.0.0.1:8000/items/categories/oxy"><img src="{% static 'images/OXY.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="http://127.0.0.1:8000/items/categories/line-clean"><img src="{% static 'images/LİNE.jpg' %}" alt="" class="img-repsonsive"></a>
+                </div>
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+    </div>
+        </div>
+            </div>
+                </div> 
+                <!-- tuglara göre filtreleme  -->
+                        <div class="col-lg-3 order-lg-first">
+                            <aside class="widget widget_archive">
+                                <ul>
+                                    <li>
+                                        <a href="http://127.0.0.1:8000/items/tags/mutfak-hijyeni">Mutfak Hijyeni</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://127.0.0.1:8000/items/tags/camasir-hijyeni" class="active">Çamaşır Hijyeni</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://127.0.0.1:8000/items/tags/kisisel-hijyen">Kişisel Hijyen</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://127.0.0.1:8000/items/tags/genel-temizlik">Genel Temizlik</a>
+                                    </li>
+                                    <li>
+                                        <a href="gida-hijyen-urunleri" class="active">Gıda Hijyen Ürünleri</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://127.0.0.1:8000/items/tags/oto-temizlik-ve-bakim-hijyen" class="active">Oto Temizlik Ve Bakım Hijyen</a>
+                                    </li>
+                                </ul>
+                            </aside>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	
     <div id="overviews" class="section wb">
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
-                    <p class="lead">Tüm Ürünler</p>
+                    <p class="lead">Ürünler</p>
                 </div>
             </div><!-- end title -->
-
+            {% for item in items %}
             <hr class="invis"> 
-			{% for item in items %}
             <div class="row"> 
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="course-item">
@@ -32,14 +91,6 @@
 							<div class="course-desc">
 								<p>{{item.description}} </p>
 							</div>
-							<div class="course-rating">
-								4.5
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star-half"></i>								
-							</div>
 						</div>
 						<div class="course-meta-bot">
 							<ul>
@@ -50,8 +101,8 @@
 						</div>
 					</div>
                 </div><!-- end col -->
-				{% endfor %}
             </div><!-- end row -->
+            {% endfor %}
         </div><!-- end container -->
     </div><!-- end section -->
 

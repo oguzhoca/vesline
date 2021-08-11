@@ -18,6 +18,10 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name= 'Tür'
+        verbose_name_plural= 'Türleri'
+
 
 class Item(models.Model):
     name = models.CharField(max_length=50, verbose_name="Ürünün Adı")
@@ -26,7 +30,7 @@ class Item(models.Model):
     title = models.CharField(max_length=50, verbose_name="Ürünün Başlığı")
     ambalaj = models.CharField(max_length=50, blank=True, null=True, verbose_name="Ürünün ambalajı")
     category = models.ForeignKey(Category, null=True, on_delete=models.DO_NOTHING, verbose_name="Ürünün Markası")
-    tags = models.ManyToManyField(Tag, blank=True)
+    tags = models.ManyToManyField(Tag, blank=True, verbose_name="Ürünün Türü")
     image = models.ImageField(upload_to="items/%Y/%m/%d/", default="/media/default.png")
     description = models.TextField(blank=True, verbose_name="Ürün Açıklaması")
 

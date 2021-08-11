@@ -30,4 +30,15 @@ def category_list(request, category_slug):
 
     return render(request, 'items.html', context)
 
+def tag_list(request, tag_slug):
+    items = Item.objects.all().filter(tags__slug=tag_slug)
+    categories = Category.objects.all()
+    tags= Tag.objects.all()
+
+    context = {
+        'items': items,
+        'categories': categories,
+        'tags':tags
+    }
     
+    return render(request, 'items.html', context)
